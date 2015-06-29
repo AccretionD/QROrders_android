@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 21
+    buildToolsVersion '22.0.1'
+    defaultConfig {
+        applicationId 'accretiond.android.chef'
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            //minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.mikepenz.iconics:library:0.9.1@aar'
+    //compile 'com.mikepenz.iconics:library:0.9.1@aar'
+    //compile 'com.google.android.gms:play-services:7.+'
+    compile 'com.jakewharton.timber:timber:2.7.1'
+    compile 'com.github.nkzawa:socket.io-client:0.4.2'
+    compile 'ch.acra:acra:4.6.1'
+    compile 'com.android.support:recyclerview-v7:21.0.3'
+    compile 'org.msgpack:msgpack:0.6.11'
+    //testCompile 'junit:junit:4.12'
+    //testCompile 'org.mockito:mockito-core:1.9.5'
+    //testCompile 'org.apache.maven:maven-ant-tasks:2.1.3'
+    //testCompile 'org.robolectric:robolectric:3.0-SNAPSHOT'
+    compile 'com.squareup:tape:1.2.3'
+    compile 'com.squareup:otto:+'
+    compile 'com.squareup:dagger:+'
+    compile 'com.google.code.gson:gson:2.1'
+    compile 'com.github.dexafree:materiallist:2.4.5'
+
+
+}

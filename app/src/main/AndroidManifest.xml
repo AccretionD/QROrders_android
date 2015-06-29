@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="accretiond.android.chef" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--android:theme="@style/AppTheme"-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name=".ChefApplication"
+
+        >
+        <activity
+            android:screenOrientation="landscape"
+            android:name="accretiond.android.chef.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".ChefService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name" >
+        </service>
+
+        <receiver android:name=".ChefReceiver" >
+            <intent-filter>
+                <action android:name="DTM.HEADUNIT.SYNC_SUCCESS" />
+                <action android:name="DTM.HEADUNIT.SYNC_FAILURE" />
+            </intent-filter>
+        </receiver>
+        <service android:name="accretiond.android.chef.coap.CoapTaskService"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="d61b08f60202cbe013bec3e17f7ca354c5808b09" />
+    </application>
+
+</manifest>
