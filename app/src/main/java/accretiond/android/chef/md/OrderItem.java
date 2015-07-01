@@ -12,6 +12,7 @@ public class OrderItem {
     public String image;
     public String name;
     public String price;
+    public String table;
     public String colorId;
 
 }

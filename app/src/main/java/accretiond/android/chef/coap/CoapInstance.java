@@ -23,8 +23,11 @@ import java.net.URISyntaxException;
  */
 public class CoapInstance {
 	// private static final int MAX_IMAGE_CACHE_ENTIRES = 100;
-private static final String COLLECTOR_TESTING4 = "coap://192.168.1.56:5683/r/hello";
-    private static final String SERVER_A = "coap://192.168.1.51:5683/r/order";
+    private static final String COLLECTOR_TESTING4 = "coap://192.168.1.56:5683/r/hello";
+    private static final String SERVER_A = "coap://192.168.42.1:5683/r/order";
+
+    //private static final String SERVER_A = "coap://192.168.42.11::5683/r/order";
+    //private static final String SERVER_A = "coap://filomenu.order:5683/r/order";
     //private static final String SERVER_PROD = "coap://52.6.145.227:5683/r/";
     //private static final String SERVER_PROD = "coap://52.6.129.243:5683/r/";
 

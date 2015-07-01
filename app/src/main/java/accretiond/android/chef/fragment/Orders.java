@@ -104,10 +104,10 @@ public class Orders extends Fragment implements CoapInstance.CoapListener{
 
 
 
-    private Card createCard(String text) {
+    private Card createCard(String text, String table) {
 
         WelcomeCard card = new WelcomeCard(getActivity());
-        card.setTitle("table #");
+        card.setTitle("table #"+table);
         card.setDescription(text);
         card.setTag("WELCOME_CARD");
         ((WelcomeCard) card).setSubtitle("My subtitle!");
@@ -143,7 +143,7 @@ public class Orders extends Fragment implements CoapInstance.CoapListener{
                     for (int i=0 ;i< ar.length();i++) {
                         JSONObject obj= (JSONObject) ar.get(i);
                         OrderItem a =  getOrderFromJSON(obj.toString());
-                        Card card = createCard(a.description);
+                        Card card = createCard(a.description,a.table);
                         mListView.add(card);
                     }
                 } catch (JSONException e) {
