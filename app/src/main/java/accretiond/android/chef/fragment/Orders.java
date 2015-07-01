@@ -107,7 +107,7 @@ public class Orders extends Fragment implements CoapInstance.CoapListener{
     private Card createCard(String text, String table,String n) {
 
         WelcomeCard card = new WelcomeCard(getActivity());
-        card.setTitle("table #"+table);
+        card.setTitle("Mesa #"+table);
         card.setDescription("Cantidad:"+n);
         card.setTag("WELCOME_CARD");
         ((WelcomeCard) card).setSubtitle(text);
