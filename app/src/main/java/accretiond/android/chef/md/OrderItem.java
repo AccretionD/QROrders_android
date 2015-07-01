@@ -14,5 +14,6 @@ public class OrderItem {
     public String price;
     public String table;
     public String colorId;
+    public String qty;
 
 }

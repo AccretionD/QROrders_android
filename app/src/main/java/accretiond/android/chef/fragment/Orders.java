@@ -104,20 +104,20 @@ public class Orders extends Fragment implements CoapInstance.CoapListener{
 
 
 
-    private Card createCard(String text, String table) {
+    private Card createCard(String text, String table,String n) {
 
         WelcomeCard card = new WelcomeCard(getActivity());
         card.setTitle("table #"+table);
-        card.setDescription(text);
+        card.setDescription("Cantidad:"+n);
         card.setTag("WELCOME_CARD");
-        ((WelcomeCard) card).setSubtitle("My subtitle!");
-        ((WelcomeCard) card).setButtonText("Okay!");
-        ((WelcomeCard) card).setOnButtonPressedListener(new OnButtonPressListener() {
-            @Override
-            public void onButtonPressedListener(View view, Card card) {
-                Toast.makeText(mContext, "Welcome!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        ((WelcomeCard) card).setSubtitle(text);
+        //((WelcomeCard) card).setButtonText("Okay!");
+        //((WelcomeCard) card).setOnButtonPressedListener(new OnButtonPressListener() {
+         //   @Override
+          //  public void onButtonPressedListener(View view, Card card) {
+          //      Toast.makeText(mContext, "Welcome!", Toast.LENGTH_SHORT).show();
+          //  }
+        //});
 
 
         ((WelcomeCard) card).setBackgroundColorRes(R.color.background_material_dark);
@@ -143,7 +143,7 @@ public class Orders extends Fragment implements CoapInstance.CoapListener{
                     for (int i=0 ;i< ar.length();i++) {
                         JSONObject obj= (JSONObject) ar.get(i);
                         OrderItem a =  getOrderFromJSON(obj.toString());
-                        Card card = createCard(a.description,a.table);
+                        Card card = createCard(a.description,a.table, a.qty);
                         mListView.add(card);
                     }
                 } catch (JSONException e) {
